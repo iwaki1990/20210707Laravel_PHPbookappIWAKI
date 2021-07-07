@@ -22,8 +22,8 @@ Route::get('/book/{book}', [BookController::class, 'find']);
 Route::post('/book/{book}', [BookController::class, 'search']);
 Route::delete('/book/{book}', [BookController::class, 'delete']);
 Route::delete('/book/{book}', [BookController::class, 'remove']);
-Route::get('book/auth', [BookController::class,'getAuth']);
-Route::post('book/auth', [BookController::class,'postAuth']);
+Route::get('/book/auth', [BookController::class,'getAuth']);
+Route::post('/book/auth', [BookController::class,'postAuth']);
 
 Route::get('/', function () {
     return view('welcome');
@@ -32,5 +32,7 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/book', [BookController::class, 'index'])->middleware('auth');
 
 require __DIR__.'/auth.php';
