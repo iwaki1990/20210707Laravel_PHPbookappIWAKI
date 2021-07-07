@@ -22,8 +22,8 @@ Route::get('/book/{book}', [BookController::class, 'find']);
 Route::post('/book/{book}', [BookController::class, 'search']);
 Route::delete('/book/{book}', [BookController::class, 'delete']);
 Route::delete('/book/{book}', [BookController::class, 'remove']);
-Route::get('/book/auth', [BookController::class,'getAuth']);
-Route::post('/book/auth', [BookController::class,'postAuth']);
+Route::get('book/auth', [BookController::class,'getAuth']);
+Route::post('book/auth', [BookController::class,'postAuth']);
 
 Route::get('/', function () {
     return view('welcome');

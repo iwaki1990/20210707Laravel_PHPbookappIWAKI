@@ -4,7 +4,7 @@
 
 @section('content')
 <p>{{$message}}</p>
-   <form action="/book/auth" method="post">
+   <form action="book/auth" method="post">
    <table>
       @csrf
       <tr><th>mail: </th><td><input type="text" 
