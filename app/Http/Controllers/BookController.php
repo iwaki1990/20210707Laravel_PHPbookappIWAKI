@@ -50,7 +50,7 @@ class BookController extends Controller
         $books = new Book;
         $books->title = $request->name;
         $books->save();
-        return redirect('/');
+        return redirect('/book');
     }
 
     public function find(Request $request)
@@ -78,7 +78,7 @@ class BookController extends Controller
     public function remove( $id)
     {
         Book::find($id)->delete();
-        return redirect('/');
+        return redirect('/book');
     }
 
     public function getAuth(Request $request)
